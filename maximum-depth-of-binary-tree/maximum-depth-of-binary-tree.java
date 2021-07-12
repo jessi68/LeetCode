@@ -21,34 +21,23 @@ class Solution {
         if(root == null) {
             return maxDepth;
         }
-        if(root.left == null && root.right == null) {
-            return maxDepth;
-        }
-        
-        if(root.left == null) {
-            return depth(root.right, maxDepth + 1);
-        }
-        
-        if(root.right == null) {
-            return depth(root.left, maxDepth + 1);
-        }
-        
-        int leftHeight = depth(root.left, maxDepth + 1);
-        int rightHeight =  depth(root.right, maxDepth + 1);
+       
+        int leftHeight = depth(root.left, maxDepth);
+        int rightHeight =  depth(root.right, maxDepth);
         
         
         if(leftHeight >= rightHeight) {
-            return leftHeight;
+            return leftHeight + 1;
         }
         
-        return rightHeight;
+        return rightHeight + 1;
     }
     
     public int maxDepth(TreeNode root) {
         if(root == null) {
             return 0;
         } else{
-            return depth(root, 1);
+            return depth(root, 0);
         }
     }
 }
