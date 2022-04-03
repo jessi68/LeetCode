@@ -22,7 +22,6 @@ class Solution {
         ListNode temp;
         ListNode lastNode = root;
         
-        System.out.println(root.val);
         while(current.next != null) {
             current = current.next;
             count += 1;
@@ -31,7 +30,6 @@ class Solution {
             }
         }
         
-        // System.out.println(count);
         
         if(count != this.k) {
             return headAndLast;
